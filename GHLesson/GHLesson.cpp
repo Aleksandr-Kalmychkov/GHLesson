@@ -18,11 +18,19 @@ vector<int> GenerateVector(int minValue, int maxValue, int length)
 	for (size_t i = 0; i < length; i++)
 	{
 		vec.push_back(rand()%(maxValue-minValue+1)+minValue);
-		cout << vec.at(i) <<endl;
 	}
 	return vec;
 }
 
 int main()
 {
+	vector<int> vec = GenerateVector(-250, 250, 200);
+	cout << "Generated vector:" << endl;
+	for (auto el : vec)
+	{
+		cout << el << "; ";
+	}
+	cout << endl;
+	cout << "Summ of positive elements:" << endl;
+	cout << SumOfPositive(vec);
 }
